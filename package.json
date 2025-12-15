@@ -1,6 +1,6 @@
 {
   "name": "text-request-schemas",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Zod Schemas for v3 text-request api.",
   "type": "module",
   "license": "MIT",
