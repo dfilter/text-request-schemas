@@ -7,7 +7,7 @@ export const groupSchema = z.object({
   is_keyword: z.boolean(),
   name: z.string(),
   notes: z.string().nullish(),
-  last_message_sent_utc: z.coerce.date().nullish(),
+  last_message_sent_utc: z.coerce.date<string>().nullish(),
 });
 export type Group = z.infer<typeof groupSchema>;
 

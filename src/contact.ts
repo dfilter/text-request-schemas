@@ -50,15 +50,15 @@ export const contactSchema = z.object({
 export type Contact = z.infer<typeof contactSchema>;
 
 export const fullContactSchema = contactSchema.extend({
-  first_contact_utc: z.coerce.date().nullable(),
-  opted_out_utc: z.coerce.date().nullable(),
-  last_msg_sent_utc: z.coerce.date().nullable(),
-  last_msg_received_utc: z.coerce.date().nullable(),
+  first_contact_utc: z.coerce.date<string>().nullable(),
+  opted_out_utc: z.coerce.date<string>().nullable(),
+  last_msg_sent_utc: z.coerce.date<string>().nullable(),
+  last_msg_received_utc: z.coerce.date<string>().nullable(),
   total_msgs_sent: z.number(),
   total_msgs_received: z.number(),
   response_count: z.number(),
-  date_created_utc: z.coerce.date().nullable(),
-  last_contact_date_utc: z.coerce.date().nullable(),
+  date_created_utc: z.coerce.date<string>().nullable(),
+  last_contact_date_utc: z.coerce.date<string>().nullable(),
   last_message: messageSchema.nullable(),
 });
 export type FullContact = z.infer<typeof fullContactSchema>;

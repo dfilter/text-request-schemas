@@ -62,7 +62,7 @@ export const msg_received_schema = z.object({
   }),
   conversation: z.object({
     id: z.number().int(),
-    date: z.coerce.date(),
+    date: z.coerce.date<string>(),
     status: messageStatusEnum.nullable(),
     consumerPhoneNumber: z.string(),
     messageDirection,

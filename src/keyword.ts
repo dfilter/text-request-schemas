@@ -5,7 +5,7 @@ export const keywordSchema = z.object({
   id: z.number().int().gt(0),
   subscribers_count: z.number().int().gte(0),
   keyword_value: z.string(),
-  date_created: z.coerce.date(),
+  date_created: z.coerce.date<string>(),
   response: z.string().nullable(),
   group_id: z.number().int().gt(0),
 });

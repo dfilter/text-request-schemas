@@ -47,7 +47,7 @@ export type PaymentQuery = z.infer<typeof paymentQuerySchema>;
 
 export const paymentSchema = z.object({
   payment_id: z.number(),
-  request_date: z.coerce.date(),
+  request_date: z.coerce.date<string>(),
   recipient: z.string(),
   description: z.string(),
   customer_phone: z.string(),

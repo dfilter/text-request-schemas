@@ -27,7 +27,7 @@ export const messageSchema = z.object({
   body: z.string(),
   message_direction: messageDirection,
   response_by_username: z.string().nullable(),
-  message_timestamp_utc: z.coerce.date(),
+  message_timestamp_utc: z.coerce.date<string>(),
   delivery_status: messageStatusEnum.nullable(),
   delivery_error: z.string().nullable(),
   mms_media: z.string().array(),

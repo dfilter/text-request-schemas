@@ -22,13 +22,13 @@ export type Source = z.infer<typeof source>;
 export const reviewSchema = z.object({
   id: z.number(),
   platform,
-  review_date_utc: z.coerce.date(),
+  review_date_utc: z.coerce.date<string>(),
   review_message: z.string(),
   reviewer_name: z.string(),
   star_reating: z.number().nullable(),
   is_positive_recommendation: z.boolean().nullable(),
   reponse_message: z.string().nullable(),
-  response_utc: z.coerce.date().nullable(),
+  response_utc: z.coerce.date<string>().nullable(),
   source,
   campaign_id: z.number().nullable(),
   campaign_name: z.string().nullable(),
@@ -52,7 +52,7 @@ export const campaignSchema = z.object({
   id: z.number(),
   name: z.string(),
   base_link: z.string(),
-  date_created: z.coerce.date(),
+  date_created: z.coerce.date<string>(),
   is_archived: z.boolean(),
 });
 export type Campaign = z.infer<typeof campaignSchema>;
