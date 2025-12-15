@@ -1,0 +1,59 @@
+{
+  "name": "text-request-schemas",
+  "version": "0.1.0",
+  "description": "Zod Schemas for v3 text-request api.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/dfilter/text-request-schemas#readme",
+  "bugs": {
+    "url": "https://github.com/dfilter/text-request-schemas/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfilter/text-request-schemas.git"
+  },
+  "author": "Dirk Filter <dirk_filter@outlook.com>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Http Client",
+    "Client",
+    "Typescript",
+    "Zod",
+    "Type Safe",
+    "Text Request",
+    "text-request",
+    "text request"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "tsdown && bumpp && pnpm publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.8",
+    "@types/node": "24.10.1",
+    "bumpp": "10.3.2",
+    "dotenv": "17.2.3",
+    "tsdown": "0.18.0",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "uuid": "13.0.0",
+    "zod": "4.2.0"
+  },
+  "packageManager": "pnpm@10.26.0+sha512.3b3f6c725ebe712506c0ab1ad4133cf86b1f4b687effce62a9b38b4d72e3954242e643190fc51fa1642949c735f403debd44f5cb0edd657abe63a8b6a7e1e402"
+}
