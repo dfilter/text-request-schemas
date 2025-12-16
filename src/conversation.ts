@@ -23,7 +23,7 @@ export const conversationQuerySchema = paginationQuerySchema
     include_archived: z.boolean(),
     search: z.string(),
     show_unresolved_only: z.boolean(),
-    tags: preprocessArrayToCommaSeparatedString(z.string().uuid()),
+    tags: preprocessArrayToCommaSeparatedString(z.uuid()),
   })
   .partial();
 export type ConversationQuery = z.infer<typeof conversationQuerySchema>;

@@ -32,7 +32,7 @@ export type UserCollection = z.infer<typeof userCollectionSchema>;
 export const userQuerySchema = paginationQuerySchema
   .extend({
     external_user_id: z.string(),
-    email: z.string().email(),
+    email: z.email(),
   })
   .partial();
 export type UserQuery = z.infer<typeof userQuerySchema>;

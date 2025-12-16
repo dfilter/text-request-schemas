@@ -37,7 +37,7 @@ export const webhookCollectionSchema = z.object({
 export type WebhookCollection = z.infer<typeof webhookCollectionSchema>;
 
 export const webhookCreateSchema = z.object({
-  target_url: z.string().url(),
+  target_url: z.url(),
   event,
   http_verb: httpVerb,
 });
@@ -49,7 +49,7 @@ export const webhookPathParams = dashboardIdPathParamsSchema.extend({
 export type WebhookPathParams = z.infer<typeof webhookPathParams>;
 
 export const msg_received_schema = z.object({
-  messageUniqueIdentifier: z.string().uuid(),
+  messageUniqueIdentifier: z.uuid(),
   account: z.object({
     id: z.number().int(),
     externalAccountId: z.string().nullable().optional(),

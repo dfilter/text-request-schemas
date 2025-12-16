@@ -50,9 +50,9 @@ export const messageCreateSchema = z.object({
   to: z.string().min(10),
   body: z.string().nonempty(),
   sender_name: z.string().nonempty(),
-  status_callback: z.string().url().optional(),
-  location_callback: z.string().url().optional(),
-  mms_media: z.array(z.string().url()).optional(),
+  status_callback: z.url().optional(),
+  location_callback: z.url().optional(),
+  mms_media: z.array(z.url()).optional(),
   authvia_conversation_id: z.string().optional(),
   geolocation_requested: z.boolean().optional(),
 });
@@ -76,16 +76,16 @@ export type MessageCollection = z.infer<typeof messageCollectionSchema>;
 export const contactMessageCreateSchema = z.object({
   body: z.string(),
   sender_name: z.string(),
-  status_callback: z.string().url().optional(),
-  location_callback: z.string().url().optional(),
-  mms_media: z.string().url().array().optional(),
+  status_callback: z.url().optional(),
+  location_callback: z.url().optional(),
+  mms_media: z.url().array().optional(),
 });
 export type ContactMessageCreate = z.infer<typeof contactMessageCreateSchema>;
 
 export const messageQuerySchema = paginationQuerySchema
   .extend({
-    start_date: z.string().datetime(),
-    end_date: z.string().datetime(),
+    start_date: z.iso.datetime(),
+    end_date: z.iso.datetime(),
   })
   .optional();
 export type MessageQuery = z.infer<typeof messageQuerySchema>;

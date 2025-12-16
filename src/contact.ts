@@ -26,7 +26,7 @@ export const contactQueryParamsSchema = z
     last_message_sent_before: z.date(),
     last_message_timestamp_after_utc: z.date(),
     last_message_timestamp_before_utc: z.date(),
-    tags: preprocessArrayToCommaSeparatedString(z.string().uuid()),
+    tags: preprocessArrayToCommaSeparatedString(z.uuid()),
   })
   .partial();
 export type ContactQuery = z.infer<typeof contactQueryParamsSchema>;

@@ -1,5 +1,5 @@
 import { v7 as uuidv7 } from "uuid";
-import { type ZodSchema, z } from "zod";
+import { z } from "zod";
 
 export const apiKeySchema = z.string();
 
@@ -58,7 +58,9 @@ export type MessagePaginationQuery = z.infer<
   typeof messagesPaginationQuerySchema
 >;
 
-export const preprocessArrayToCommaSeparatedString = <T extends ZodSchema>(
+export const preprocessArrayToCommaSeparatedString = <
+  T extends z.ZodNumber | z.ZodString | z.ZodUUID,
+>(
   schema: T,
 ) =>
   z.preprocess(
@@ -66,5 +68,5 @@ export const preprocessArrayToCommaSeparatedString = <T extends ZodSchema>(
     schema,
   );
 
-export const preprocessUuid = <T extends ZodSchema>(schema: T) =>
+export const preprocessUuid = <T extends z.ZodString>(schema: T) =>
   z.preprocess((value) => (!value ? uuidv7() : value), schema);
