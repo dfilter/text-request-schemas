@@ -36,7 +36,7 @@ export const contactSchema = z.object({
   first_name: z.string().nullable(),
   last_name: z.string().nullable(),
   display_name: z.string().nullable(),
-  thread_id: z.string(),
+  thread_id: z.string().optional(),
   is_suppressed: z.boolean(),
   is_archived: z.boolean(),
   is_blocked: z.boolean(),
