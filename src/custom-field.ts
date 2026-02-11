@@ -7,7 +7,7 @@ export const customFieldSchema = z.object({
 export type CustomField = z.infer<typeof customFieldSchema>;
 
 export const contactCustomFieldSchema = z.object({
-  id: z.string(),
+  id: z.string().nullish(),
   value: z.string().nullish(),
 });
 export type ContactCustomField = z.infer<typeof contactCustomFieldSchema>;
